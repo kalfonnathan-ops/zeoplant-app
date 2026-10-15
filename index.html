@@ -886,6 +886,9 @@
   applyLang();
   calc();
   if('serviceWorker' in navigator && /^https?:$/.test(location.protocol)){
+    // when a newer version takes over an already-installed app, reload once so the update shows immediately
+    const hadController = !!navigator.serviceWorker.controller; let reloaded = false;
+    navigator.serviceWorker.addEventListener('controllerchange', ()=>{ if(hadController && !reloaded){ reloaded = true; location.reload(); } });
     window.addEventListener('load', ()=>{ navigator.serviceWorker.register('sw.js').catch(()=>{}); });
   }
 </script>
