@@ -15,8 +15,8 @@ folder, open the link on the phone, then:
 Opening index.html as a plain file (USB, WhatsApp, e-mail) also works on
 Android Chrome, just without the install and offline features.
 
-Language: EN / FR / DE / AR switcher in the header (chip bar on phones); first visit follows the phone language,
-the choice is remembered on the device (localStorage zeoplant.lang). Arabic is right-to-left.
+Language: EN / FR / DE switcher in the header (chip bar on phones); first visit follows the phone language,
+the choice is remembered on the device (localStorage zeoplant.lang).
 Inputs are remembered on the device (localStorage). "Reset to Excel defaults" clears them.
 After editing index.html, change CACHE in sw.js (zeoplant-v1 -> v2) so phones pick up the update.
 Source: ../ZeoPlant-Dashboard.html (unchanged). Rebuild script: see Claude session scratchpad build.js.

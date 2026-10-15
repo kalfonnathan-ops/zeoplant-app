@@ -257,13 +257,13 @@
     <div class="brand-meta">
       <b data-i18n="brand.model">Interactive Model</b>
       <span data-i18n-html="brand.meta">Edit any input — everything recalculates<br>Currency: DH (MAD)</span>
-      <div class="lang" role="group" aria-label="Language" data-i18n-attr="aria-label:aria.lang"><button type="button" class="lang-btn" data-lang="en" lang="en">EN</button><button type="button" class="lang-btn" data-lang="fr" lang="fr">FR</button><button type="button" class="lang-btn" data-lang="de" lang="de">DE</button><button type="button" class="lang-btn" data-lang="ar" lang="ar">AR</button></div>
+      <div class="lang" role="group" aria-label="Language" data-i18n-attr="aria-label:aria.lang"><button type="button" class="lang-btn" data-lang="en" lang="en">EN</button><button type="button" class="lang-btn" data-lang="fr" lang="fr">FR</button><button type="button" class="lang-btn" data-lang="de" lang="de">DE</button></div>
     </div>
   </div>
 </header>
 
 <nav class="mnav" aria-label="Sections" data-i18n-attr="aria-label:aria.sections">
-  <div class="lang" role="group" aria-label="Language" data-i18n-attr="aria-label:aria.lang"><button type="button" class="lang-btn" data-lang="en" lang="en">EN</button><button type="button" class="lang-btn" data-lang="fr" lang="fr">FR</button><button type="button" class="lang-btn" data-lang="de" lang="de">DE</button><button type="button" class="lang-btn" data-lang="ar" lang="ar">AR</button></div>
+  <div class="lang" role="group" aria-label="Language" data-i18n-attr="aria-label:aria.lang"><button type="button" class="lang-btn" data-lang="en" lang="en">EN</button><button type="button" class="lang-btn" data-lang="fr" lang="fr">FR</button><button type="button" class="lang-btn" data-lang="de" lang="de">DE</button></div>
   <a href="#s-input" data-i18n="nav.inputs">Inputs</a><a href="#s-kpi" data-i18n="nav.results">Results</a><a href="#s-mix" data-i18n="nav.quantities">Quantities</a><a href="#s-water" data-i18n="nav.water">Water</a><a href="#s-season" data-i18n="nav.seasons">Seasons</a><a href="#s-roi" data-i18n="nav.roi">ROI</a><a href="#s-how" data-i18n="nav.how">How it works</a><a href="#s-tech" data-i18n="nav.tech">Technical</a>
 </nav>
 
@@ -510,7 +510,7 @@
   // ===================== i18n =====================
   // Keys: static text is tagged with data-i18n (textContent) / data-i18n-html (innerHTML) /
   // data-i18n-attr="attr:key". Dynamic text in calc() goes through t(key, vars).
-  // Brand "ZeoPlant", currency DH and units stay Latin in every language.
+  // Brand "ZeoPlant", currency DH and units are not translated.
   const I18N = {
   en: {
     'title':'ZeoPlant — Water Savings & ROI Calculator',
@@ -695,69 +695,8 @@
     'kpi.on':'bei {inv} DH',
     'bar.without':'Ohne<br>ZeoPlant','bar.with':'Mit<br>ZeoPlant','bar.saved':'Eingespartes<br>Wasser','bar.annual':'Jährliche<br>Einsparung',
     'bar.invest':'Invest.<br>(einmalig)','bar.ten':'10 Jahre Wasser-<br>einsparung (DH)','bar.net':'Nettogewinn<br>(DH)'
-  },
-  ar: {
-    'title':'ZeoPlant — حاسبة توفير الماء والعائد على الاستثمار',
-    'aria.sections':'الأقسام', 'aria.lang':'اللغة',
-    'brand.tag':'محسّن تربة بالزيوليت · حاسبة توفير الماء والعائد على الاستثمار',
-    'brand.model':'نموذج تفاعلي',
-    'brand.meta':'عدّل أي قيمة — يُعاد احتساب كل شيء<br>العملة: DH (MAD)',
-    'nav.inputs':'المدخلات','nav.results':'النتائج','nav.quantities':'الكميات','nav.water':'الماء','nav.seasons':'الفصول','nav.roi':'العائد','nav.how':'طريقة العمل','nav.tech':'تقني',
-    'intro':'<b>كيف يعمل.</b> ZeoPlant زيوليت طبيعي يُخلط بتربة الغرس. بنيته البلورية المسامية تخزّن الماء والمغذيات في منطقة الجذور وتعيدها إلى النبات، مما يقلّل الحاجة إلى الري. أدخل <b>مساحة المشروع ونسب الخلط والأسعار</b> أدناه — تعطيك الحاسبة <b>كميات المواد اللازمة</b> و<b>الماء والتكلفة الموفَّرين</b> و<b>العائد على الاستثمار / مدة الاسترداد</b> كاملة، بنفس معادلات جدول البيانات الأصلي.',
-    'sec.input':'بيانات الإدخال','sec.input.sub':'القيم الافتراضية = مشروع ZEO-ROI (2,000 m²)',
-    'grp.project':'المشروع <span>المساحة وعمق الخلط</span>',
-    'in.area':'المساحة','in.depth':'عمق الخلط','in.iwr':'الاحتياج المائي الأساسي (IWR، رمل)','in.save':'توفير الماء مع الخليط',
-    'grp.blend':'نسبة الخلط <span id="mix-sum-note">بالحجم — المجموع 100%</span>',
-    'in.sand':'رمل %','in.zeo':'ZeoPlant %','in.comp':'كومبوست %',
-    'grp.density':'الكثافة الظاهرية <span>kg / m³</span>',
-    'in.dsand':'رمل','in.dzeo':'ZeoPlant','in.dcomp':'كومبوست','provisional':'مؤقت*',
-    'grp.prices':'الأسعار','in.wcost':'سعر الماء','in.zprice':'سعر ZeoPlant',
-    'btn.calc':'↻ إعادة الاحتساب','btn.reset':'استعادة قيم Excel','btn.print':'🖨 طباعة / PDF',
-    'note.season.edit':'يمكن تعديل أيام الفصول ومعاملات الطلب في جدول الفصول أدناه.',
-    'kpi.save':'توفير الماء','kpi.save.s':'مقارنة بتربة رملية غير معالجة','kpi.m3':'الماء الموفَّر / سنة','kpi.dh':'التوفير السنوي','kpi.pb':'مدة الاسترداد','kpi.roi':'العائد / سنة','kpi.roi.s':'عائد سنوي',
-    'sec.mix':'كميات المواد اللازمة','mix.h.blend':'الخلط الحجمي والكتلة','donut.total':'m³ إجمالاً',
-    'leg.sand':'رمل','leg.comp':'كومبوست','leg.zeo':'ZeoPlant',
-    'note.mass':'الكتلة = الحجم × الكثافة الظاهرية. ZeoPlant هو المكوّن الفعّال لحفظ الماء — كميته تحدّد حجم الاستثمار.',
-    'mix.h.comp':'تفصيل المكوّنات','th.component':'المكوّن','th.mix':'النسبة %','th.vol':'الحجم m³','th.density':'الكثافة','th.mass':'الكتلة kg','row.mixture':'الخليط (رمل طمي)',
-    'note.density':'* الكثافات الظاهرية مؤقتة في النموذج الأصلي (ZeoPlant والكومبوست «قيد التحقق»).',
-    'sec.water':'استهلاك الماء','sec.water.sub':'الاحتياج السنوي من ماء الري','water.h.annual':'الاستهلاك السنوي للماء (m³)','water.h.daily':'الاحتياج اليومي — المساحة الكلية',
-    'w.iwr0':'احتياج النبات IWR — الأساس (تربة رملية)','w.iwr1':'احتياج النبات IWR — مع خليط ZeoPlant','w.saved':'الماء الموفَّر','w.d0':'الطلب اليومي بدون خليط','w.d1':'الطلب اليومي مع الخليط','w.ds':'التوفير بفضل الخلط',
-    'sec.season':'التوزيع الفصلي للماء','th.season':'الفصل','th.factor':'معامل الطلب %','th.days':'الأيام','th.w0':'بدون ZeoPlant (m³)','th.w1':'مع ZeoPlant (m³)','th.share':'الحصة',
-    'season.summer':'الصيف (ماي–شتنبر)','season.autumn':'الخريف (أكتوبر–نونبر)','season.spring':'الربيع (مارس–أبريل)','season.winter':'الشتاء (دجنبر–فبراير)','row.total':'المجموع',
-    'note.season':'الطلب الفصلي = المساحة × IWR الأساسي × المعامل × الأيام (مع الخليط يُستعمل IWR المخفَّض). عدّل المعاملات أو الأيام حسب مناخك.',
-    'sec.roi':'التكلفة والعائد على الاستثمار','roi.h.cost':'تكلفة الماء السنوية (DH)','roi.h.inv':'الاستثمار والعائد',
-    'r.price':'سعر ZeoPlant','r.qty':'الكمية المطلوبة','r.inv':'إجمالي الاستثمار','r.ann':'التوفير السنوي','r.pb':'مدة الاسترداد',
-    'roi.h.ten':'التوقعات التراكمية لعشر سنوات','note.ten':'إرشادي: التوفير السنوي ثابت، دون احتساب ارتفاع تعرفة الماء.',
-    'sec.how':'شرح لوحة المعطيات','sec.how.sub':'من المدخلات إلى العائد في خمس خطوات',
-    'step1.h':'حجم الخليط','step1.p':'المساحة × العمق = m³ من التربة المراد خلطها لمنطقة الجذور.',
-    'step2.h':'الكميات','step2.p':'كل مكوّن = الحجم × نسبته × الكثافة الظاهرية → kg من الرمل والكومبوست وZeoPlant.',
-    'step3.h':'الماء الموفَّر','step3.p':'يخفّض ZeoPlant الاحتياج اليومي للري بنسبة التوفير %.',
-    'step4.h':'الطلب السنوي','step4.p':'الطلب اليومي × المعاملات الفصلية على 365 يوماً → m³ وDH في السنة.',
-    'step5.h':'العائد','step5.p':'DH الموفَّرة سنوياً مقابل استثمار ZeoPlant → مدة الاسترداد والعائد السنوي.',
-    'sec.tech':'مرجع تقني','sec.tech.sub':'قوام التربة والمنهجية','tech.h.usda':'مثلث قوام التربة USDA','tech.alt':'مثلث تصنيف قوام التربة USDA',
-    'note.usda':'يقع الخليط المستهدف في منطقة <b>الرمل&nbsp;/&nbsp;الرمل الطمي</b> — نفاذية عالية مع احتفاظ محسَّن بالماء بعد إضافة ZeoPlant.',
-    'tech.h.formulas':'المعادلات المستعملة',
-    'f1':'<b>حجم الخليط</b> = المساحة × عمق الخلط <div class="formula" dir="ltr">m³ = area(m²) × depth(m)</div>',
-    'f2':'<b>كتلة المكوّن</b> = (الحجم × النسبة %) × الكثافة الظاهرية',
-    'f3':'<b>IWR الجديد</b> = IWR الأساسي × (1 − نسبة التوفير) ؛ <b>الموفَّر</b> = الأساسي − الجديد',
-    'f4':'<b>الطلب الفصلي</b> = المساحة × IWR × المعامل % × الأيام ⁄ 1000 → m³',
-    'f5':'<b>التكلفة السنوية</b> = m³ × سعر الماء ؛ <b>التوفير</b> = التكلفة₀ − التكلفة₁',
-    'f6':'<b>الاستثمار</b> = kg ZeoPlant × السعر ؛ <b>مدة الاسترداد</b> = الاستثمار ⁄ التوفير السنوي ؛ <b>العائد</b> = 1 ⁄ مدة الاسترداد',
-    'note.source':'المصنّف الأصلي: <b>zeo plant.xlsx</b> — الأوراق ZEO&nbsp;dashboard وZeoPlant وZEO-ROI. القيم بالدرهم المغربي (DH).',
-    'foot.1':'&nbsp;حاسبة تفاعلية لتوفير الماء والعائد على الاستثمار · مبنية من <i>zeo plant.xlsx</i>',
-    'foot.2':'أرقام إرشادية · تحقّق من الكثافات والتعرفات قبل تقديم أي عرض',
-    'u.pct':'%','u.arrow':'←','u.years':'سنة','u.yr':'سنة','u.lday':'L/يوم',
-    'mix.sum':'Σ = {v}%',
-    'mix.sub':'{vol} m³ من خليط التربة ({area} m² × {depth} m)',
-    'season.days':'{n} يوم ري إجمالاً',
-    'water.note':'خفض بنسبة {pct} في الطلب على الري — توفير {m3} m³ كل سنة في هذا المشروع.',
-    'roi.sub':'الماء بـ {w} DH/m³ · ZeoPlant بـ {z} DH/kg',
-    'roi.note':'العائد / سنة = {a} ÷ {i} = <b style="color:var(--green-d)">{roi}</b>. صافٍ موجب ابتداءً من السنة {y}.',
-    'kpi.on':'على {inv} DH',
-    'bar.without':'بدون<br>ZeoPlant','bar.with':'مع<br>ZeoPlant','bar.saved':'الماء<br>الموفَّر','bar.annual':'التوفير<br>السنوي',
-    'bar.invest':'استثمار<br>(مرة واحدة)','bar.ten':'توفير الماء<br>10 سنوات (DH)','bar.net':'الربح الصافي<br>(DH)'
   }};
-  const LOCALE = { en:'en-US', fr:'fr-FR', de:'de-DE', ar:'ar-MA' };
+  const LOCALE = { en:'en-US', fr:'fr-FR', de:'de-DE' };
   let LANG = 'en';
   const t = (k, v) => {
     let s = (I18N[LANG] && I18N[LANG][k]) ?? I18N.en[k] ?? k;
@@ -766,7 +705,7 @@
   };
   function applyLang(){
     document.documentElement.lang = LANG;
-    document.documentElement.dir = LANG==='ar' ? 'rtl' : 'ltr';
+    document.documentElement.dir = 'ltr';
     document.title = t('title');
     document.querySelectorAll('[data-i18n]').forEach(e => { e.textContent = t(e.dataset.i18n); });
     document.querySelectorAll('[data-i18n-html]').forEach(e => { e.innerHTML = t(e.dataset.i18nHtml); });

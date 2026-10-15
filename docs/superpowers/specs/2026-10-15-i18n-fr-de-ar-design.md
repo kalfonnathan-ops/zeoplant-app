@@ -67,3 +67,6 @@ number (1234.5) renders as `1,234.5` / `1 234,5` / `1.234,5` / `1,234.5`, and sc
 ## Release
 Bump `CACHE` in `sw.js` to `zeoplant-v2`, commit, push to `main` (GitHub Pages, public), confirm the
 live page serves the new build.
+
+## Update 2026-10-15 (same day)
+Arabic removed on Nathan's request. The app ships EN / FR / DE only. The logical CSS properties stay in place (harmless, and ready if RTL is ever wanted again); `dir` is fixed to `ltr`.
